@@ -1,6 +1,15 @@
+mod client;
 mod models;
-use models::normalized_offer::NormalizedOffer;
+
+use std::thread;
+
+use client::methods::transaction_stream;
 
 fn main() {
-    println!("")
+    let txn_stream_thrd = thread::spawn(|| {
+        transaction_stream();
+    });
+    loop {
+        continue;
+    }
 }
